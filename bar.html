@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bar.css">
+</head>
+<body>
+    <div id="progress-bar">
+        <div class="progress"></div>
+      </div>
+</body>
+</html>
+
+<script>
+    const progressBar = document.querySelector('.progress');
+let progressValue = 0;
+
+function updateProgress() {
+  progressValue += 1; // Simulate some progress
+  progressBar.style.width = `${progressValue}%`;
+
+  if (progressValue === 100) {
+    clearInterval(interval); // Stop update when complete
+  }
+}
+
+const interval = setInterval(updateProgress, 100); // Update progress every 100ms
+
+</script>
